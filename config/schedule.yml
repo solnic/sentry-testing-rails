@@ -1,0 +1,9 @@
+test_cron_job:
+  cron: "*/5 * * * * *"
+  class: "TestCronWorker"
+  queue: "simulated_workload"
+
+hello_world_worker:
+  cron: "*/8 * * * * *"
+  class: "HelloWorldWorker"
+  queue: "simulated_workload"

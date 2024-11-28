@@ -49,10 +49,12 @@ gem "bootsnap", require: false
 gem "faraday"
 gem "faraday-http"
 gem "rubocop"
-gem "sentry-rails"
-gem "sentry-ruby", github: "getsentry/sentry-ruby",
-                   branch: "solnic/1795-add-tracing-support-for-faraday-requests"
+gem "sentry-rails", path: "../sentry-ruby/sentry-rails"
+gem "sentry-ruby", path: "../sentry-ruby/sentry-ruby"
+gem "sentry-sidekiq", path: "../sentry-ruby/sentry-sidekiq"
+gem "sidekiq-cron"
 gem "stackprof"
+gem "vernier"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -77,3 +79,9 @@ group :test do
 end
 
 gem "dockerfile-rails", ">= 1.6", group: :development
+
+# Add this line near the other gems
+gem "sidekiq", "7.1.6"
+
+# Add this line at the end
+gem "excon"
